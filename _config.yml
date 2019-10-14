@@ -1,4 +1,4 @@
-accent_color: '#2d72d9'
+accent_color: '#d272d9'
 lang: en-US
 title: Maximilien Roberti
 description: >-
@@ -18,12 +18,11 @@ navigation:
     url: /style-guide/
   - text: Tags
     url: /tags/
-  - text: Download
-    url: 'https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme'
+  - text: Resume
+    url: >-
+      https://drive.google.com/file/d/1pvlV0biYjQCMDy0dHgypI82lAeNsEs93/view?usp=sharing
 footer:
-  content: >-
-    &copy; Scriptor all rights reserved. Theme by
-    [JustGoodThemes](https://www.justgoodthemes.com).
+  content: '&copy;'
   has_social: true
 plugins:
   - jekyll-paginate

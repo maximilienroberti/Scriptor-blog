@@ -24,6 +24,7 @@ footer:
   has_social: true
 plugins:
   - jekyll-paginate
+  - jekyll-menus
 paginate: 3
 paginate_path: '/page:num/'
 markdown: kramdown

@@ -12,15 +12,15 @@ disqus: justgoodthemes
 navigation:
   - text: Home
     url: /
-  - text: About
-    url: /about/
-  - text: Style Guide
-    url: /style-guide/
   - text: By theme
     url: /tags/
+  - text: About
+    url: /about/
   - text: Resume
     url: >-
       https://drive.google.com/file/d/1pvlV0biYjQCMDy0dHgypI82lAeNsEs93/view?usp=sharing
+  - text: Style Guide
+    url: /style-guide/
 footer:
   content: '&copy;'
   has_social: true

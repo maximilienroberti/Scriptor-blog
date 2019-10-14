@@ -1,0 +1,321 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: images
+public_folder: /images
+collections:
+  - name: config
+    label: Config
+    files:
+      - name: config
+        label: Config
+        file: _config.yml
+        fields:
+          - widget: string
+            name: accent_color
+            label: Accent Color
+            required: true
+            hint: The accent color of the theme.
+          - widget: string
+            name: lang
+            label: Site Language
+            required: false
+            hint: The language of the site used in HTML lang attribute.
+          - widget: string
+            name: title
+            label: Site Title
+            required: false
+            hint: >-
+              The title displayed in the site header, title tag, search-engine
+              results.
+          - widget: string
+            name: description
+            label: Description
+            required: false
+            hint: >-
+              The default description displayed in meta tags, search-engine
+              results.
+          - widget: string
+            name: baseurl
+            label: Baseurl
+            required: false
+            hint: 'The subpath of your site, e.g. /blog, for generating urls.'
+          - widget: string
+            name: url
+            label: Url
+            required: false
+            hint: >-
+              The base hostname and protocol of your site for where absolute
+              urls are needed.
+          - widget: string
+            name: permalink
+            label: Permalink
+            required: false
+            hint: The permalink pattern.
+          - widget: image
+            name: favicon
+            label: Favicon
+            required: false
+            hint: The icon image associated with your website.
+          - widget: string
+            name: disqus
+            label: Disqus Username
+            required: false
+            hint: The shortname for your Disqus site to enable comments.
+          - widget: list
+            name: navigation
+            label: Header Navigation
+            required: false
+            fields:
+              - widget: string
+                name: text
+                label: Title
+                required: true
+              - widget: string
+                name: url
+                label: URL
+                required: false
+          - widget: object
+            name: footer
+            label: Footer Configuration
+            required: false
+            fields:
+              - widget: markdown
+                name: content
+                label: Footer Content
+                required: false
+                hint: The copyright text displayed in the footer.
+              - widget: boolean
+                name: has_social
+                label: Enable social links?
+                required: false
+                default: true
+          - widget: list
+            name: plugins
+            label: Plugins
+            required: false
+            field:
+              label: String
+              name: string
+              widget: string
+          - widget: number
+            name: paginate
+            label: Paginate
+            required: false
+            hint: Number of posts per page.
+            valueType: int
+          - widget: string
+            name: paginate_path
+            label: Pagination Path
+            required: false
+            hint: The destination of the pagination pages.
+          - widget: hidden
+            name: markdown
+            label: Markdown
+            required: false
+          - widget: hidden
+            name: sass
+            label: Sass Configuration
+            required: false
+  - name: author
+    label: Author
+    files:
+      - name: author
+        label: Author
+        file: _data/author.json
+        fields:
+          - widget: string
+            name: name
+            label: Name
+            required: false
+            hint: The name of the author.
+          - widget: markdown
+            name: bio
+            label: Bio
+            required: false
+            hint: The short bio of the author.
+          - widget: string
+            name: url
+            label: URL
+            required: false
+            hint: The URL of the author.
+          - widget: string
+            name: location
+            label: Location
+            required: false
+            hint: The location of the author.
+          - widget: image
+            name: image
+            label: Avatar
+            required: false
+            hint: The profile image of the author.
+  - name: social
+    label: Social Links
+    files:
+      - name: social
+        label: Social Links
+        file: _data/social.json
+        fields:
+          - widget: list
+            name: links
+            label: Link
+            required: false
+            hint: A list of social links displayed in the footer.
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the icon.
+              - widget: string
+                name: icon
+                label: Icon
+                required: true
+                hint: Font Awesome icon class name.
+              - widget: string
+                name: url
+                label: URL
+                required: false
+                hint: The URL to your social profile.
+  - name: post
+    label: Posts
+    folder: _posts
+    create: true
+    extension: md
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - widget: string
+        name: title
+        label: Title
+        required: true
+        hint: The title of the post.
+      - widget: string
+        name: description
+        label: Description
+        required: false
+        hint: The description used in meta tags.
+      - widget: date
+        name: date
+        label: Date
+        required: true
+        hint: The publish date of the post.
+      - widget: image
+        name: feature_image
+        label: Feature image
+        required: false
+        hint: The featured image of the post.
+      - widget: list
+        name: tags
+        label: Tags
+        required: false
+        field:
+          label: String
+          name: string
+          widget: string
+      - widget: hidden
+        name: layout
+        label: Layout
+        required: true
+        default: post
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
+    filter:
+      field: layout
+      value: post
+  - name: page
+    label: Pages
+    folder: /
+    create: true
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - widget: string
+        name: title
+        label: Title
+        required: true
+        hint: The title of the page.
+      - widget: string
+        name: description
+        label: Description
+        required: false
+        hint: The description used in meta tags.
+      - widget: image
+        name: feature_image
+        label: Feature image
+        required: false
+        hint: The featured image of the page.
+      - widget: hidden
+        name: layout
+        label: Layout
+        required: true
+        default: page
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
+    filter:
+      field: layout
+      value: page
+  - name: tags
+    label: Tags Page
+    files:
+      - name: tags
+        label: Tags Page
+        file: tags.md
+        fields:
+          - widget: string
+            name: title
+            label: Title
+            required: true
+            hint: The title of the tags page.
+          - widget: string
+            name: description
+            label: Description
+            required: false
+            hint: The description used in meta tags.
+          - widget: hidden
+            name: layout
+            label: Layout
+            required: true
+            default: tags
+  - name: notfound
+    label: 404 Page
+    files:
+      - name: notfound
+        label: 404 Page
+        file: 404.md
+        fields:
+          - widget: string
+            name: title
+            label: Title
+            required: true
+            hint: The title of the page.
+          - widget: string
+            name: description
+            label: Description
+            required: false
+            hint: The description used in meta tags.
+          - widget: image
+            name: feature_image
+            label: Feature image
+            required: false
+            hint: The featured image of the page.
+          - widget: string
+            name: permalink
+            label: Permalink
+            required: false
+            hint: The permalink of the page.
+          - widget: hidden
+            name: layout
+            label: Layout
+            required: true
+            default: page
+          - widget: markdown
+            name: body
+            label: Content
+            required: false
+            hint: Page content

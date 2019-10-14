@@ -1,9 +1,9 @@
 {
   "links": [
     {
-      "title": "Twitter",
-      "icon": "fa-twitter",
-      "url": "https://twitter.com/MRoberti"
+      "title": "LinkedIn",
+      "icon": "fa-linkedin",
+      "url": "https://www.linkedin.com/in/maximilienroberti/"
     },
     {
       "title": "GitHub",
@@ -11,9 +11,9 @@
       "url": "https://github.com/maximilienroberti"
     },
     {
-      "title": "LinkedIn",
-      "icon": "fa-linkedin",
-      "url": "https://www.linkedin.com/in/maximilienroberti/"
+      "title": "Twitter",
+      "icon": "fa-twitter",
+      "url": "https://twitter.com/MRoberti"
     },
     {
       "title": "Kaggle",

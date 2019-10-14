@@ -1,7 +1,7 @@
 {
-    "name": "John Doe",
-    "bio": "John is a designer, photographer, speaker, author of a couple of books about typography and the founder of photo magazine Curious.",
-    "url": "http://justgoodthemes.com",
-    "location": "Vilnius, Lithuania",
-    "image": "images/author.png"
+  "name": "Maximilien Roberti",
+  "bio": "Maximilien Roberti is Machine Learning Engineer passionate about cutting-edge technology and solving real-world problems.",
+  "url": "www.linkedin.com/in/maximilienroberti/",
+  "location": "Brussels, Belgium",
+  "image": "/images/profile_picture_small.jpg"
 }

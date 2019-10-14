@@ -6,6 +6,7 @@ feature_image: /images/mountain.jpg
 tags:
   - tips
   - work
+  - machinelearning
 layout: post
 ---
 

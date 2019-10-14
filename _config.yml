@@ -7,7 +7,7 @@ description: >-
 baseurl: ''
 url: 'https://important-oak-4747e.netlify.com/'
 permalink: '/:title'
-favicon: images/favicon.png
+favicon: /images/logomr-v2.png
 disqus: justgoodthemes
 navigation:
   - text: Home

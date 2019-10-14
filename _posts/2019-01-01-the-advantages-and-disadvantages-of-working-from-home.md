@@ -1,32 +1,161 @@
 ---
-title: The Advantages & Disadvantages of Working from Home
-description: >-
-  A work at home parent is an entrepreneur who works from home and integrates
-  parenting into his or her business activities.
-date: '2019-01-01'
-feature_image: images/desk.jpg
+title: Style Guide
+description: This is a style guide of the Scriptor Jekyll theme
+date: 2019-10-13T22:00:00.000Z
+feature_image: /images/mountain.jpg
 tags:
   - tips
   - work
 layout: post
 ---
 
-A work at home parent is an entrepreneur who works from home and integrates parenting into his or her business activities. They are sometimes referred to as a WAHM *(work at home mom)* or a WAHD *(work at home dad)*.
+This is a pragraph. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis.
 
-Entrepreneurs choose to run businesses from home for a variety of reasons, including lower business expenses, personal health limitations, eliminating commuting, or in order to have a more flexible schedule. This flexibility can give an entrepreneur more options when planning tasks, business and non-business, including parenting duties. While some home-based entrepreneurs opt for childcare outside the home,[1] others integrate child rearing into their work day and workspace. The latter are considered work-at-home parents.
+# Heading 1
 
-<!--more-->
+**Quisque facilisis erat a dui**. Nam malesuada ornare dolor. Cras gravida, diam sit amet rhoncus ornare, erat elit consectetuer erat, id egestas pede nibh eget odio. Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis. Fusce et ipsum et nulla tristique facilisis.
 
-Many WAHPs start home-based businesses in order to care for their children while still creating income. The desire to care for one's own children, the incompatibility of a 9-to-5 work day with school hours or sick days, and the expense of childcare prompt many parents to change or leave their jobs in the workforce to be available to their children. Many WAHPs build a business schedule that can be integrated with their parenting duties.
+## Heading 2
 
-## Concept
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero.
 
-The Fusion Festival combines all styles of the underground electronic music scene and various other styles, sometimes depending on the attendees who choose to play their own music. It is described as a space people go to free their minds from their everyday lives, jobs, studies and other responsibilities. It is the result of the search for an alternative through music, to the system "people are forced to live in". People go to the Fusion to experience a different way of socializing and living, where experiencing one another freely, sharing love for music and art connects different scenes and minds. It is a clothing-optional event. Art installations include performance arts, static artworks, sculptures, art cars and various other forms.
+### Heading 3
 
-Fusion Festival began in 1997 near the city of Lärz in north-eastern Germany, about 160 km from Berlin and 230 km from Hamburg.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero.
 
-## Festival Site
+#### Heading 4
 
-The location is on the original grass-covered grounds of a disused military airfield (at 53°20′48.11″N 12°44′23.25″E for the 234-hectare area central field) about 4.5 km (2.25 miles) due north of the modern Rechlin-Lärz Airfield facility. The site was first acquired by the German Empire in 1916 as an aviation research and training ground, opening the facility for use by the Luftstreitkräfte in August 1918. After the establishment of the Luftwaffe in 1935, the field served as the Erprobungsstelle Rechlin central military aircraft test facility of the Third Reich through early 1945, and it was captured by the Soviet Red Army on May 2, 1945, for use by the VVS. 
+Quisque facilisis erat a dui. Nam malesuada ornare dolor. Cras gravida, diam sit amet rhoncus ornare, erat elit consectetuer erat, id egestas pede nibh eget odio. Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis.
 
-There are grass-covered concrete hangars (actual bunkers) from that time that were used for Soviet fighter aircraft (hence the Cyrillic transliteration of the festival name and various stages, as many Cyrillic inscriptions were still present on the site). The airfield was reopened for civilian use in 1994 and sold to the Müritz Airpark Group in 2010. [[Source](https://en.wikipedia.org/wiki/Fusion_Festival)]
+##### Heading 5
+
+Curabitur pellentesque facilisis orci, ut rhoncus nulla scelerisque ac. Integer in magna vel justo venenatis ornare vitae vel sem.
+
+###### Heading 6
+
+Nulla tempus tortor nec nunc volutpat commodo. Vivamus efficitur imperdiet velit sagittis pellentesque. In fringilla dui nec dolor sollicitudin, et scelerisque elit pellentesque. Integer vestibulum viverra sem, vel ornare nibh. Proin lobortis elit nunc, ut consequat elit vulputate sit amet.
+
+## Emphasis
+
+**This is bold text**
+
+*This is italic text*
+
+~~Strikethrough~~
+
+## Links
+
+[I'm an inline-style link](https://www.google.com)
+
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+
+## Quoting
+
+>“Creativity is allowing yourself to make mistakes. Design is knowing which ones to keep.”
+
+Lorem ipsum dolor sit amet, `consectetuer adipiscing` elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero.
+
+***
+
+## Code Blocks
+
+```css
+#header h1 { 
+  color: #fff;
+  margin-bottom: 1.5em; 
+}
+
+.author-avatar {
+  border-radius: 5px;
+  display: block;
+  height: 60px;   
+  margin-right: 30px;
+  width: 60px;
+}
+```
+
+```javascript
+// Simple map
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+}
+```
+
+```json
+{"menu": {
+  "id": "file",
+  "value": "File",
+  "popup": {
+    "menuitem": [
+      {"value": "New", "onclick": "CreateNewDoc()"},
+      {"value": "Open", "onclick": "OpenDoc()"},
+      {"value": "Close", "onclick": "CloseDoc()"}
+    ]
+  }
+}}
+```
+
+```yml
+sass:
+  input_file: sass/main.scss.njk
+  output_file: assets/css/main.css
+  indentWidth: 4
+  outputStyle: nested
+  precision: 10
+```
+
+```
+No language indicated, so no syntax highlighting. 
+```
+
+Inline `code` has `back-ticks around` it.
+
+## Videos
+
+<iframe src="https://player.vimeo.com/video/153339497?byline=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+[Terraforming](https://vimeo.com/153339497) from [Studio Swine](https://vimeo.com/studioswine) on [Vimeo](https://vimeo.com)
+
+## Full Width Image
+
+Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:
+
+{% include image_full.html imageurl="/images/apple-watch-in-car.jpg" title="Apple" caption="This is the caption" %}
+
+Lorem ipsum dolor sit amet, `consectetuer adipiscing` elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero.
+
+## Regular Image
+
+{% include image_caption.html imageurl="/images/apple-watch-in-car.jpg" title="Apple Super" caption="This is the caption" %}
+
+Lorem ipsum dolor sit amet, `consectetuer adipiscing` elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Lorem ipsum dolor sit amet, `consectetuer adipiscing` elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero.
+
+## Lists
+
+Here is an unordered list of items, typically rendered as a bulleted list:
+
++ Donec non tortor in arcu mollis feugiat
++ Lorem ipsum dolor sit amet, consectetuer adipiscing elit
++ Donec id eros eget quam aliquam gravida
++ Vivamus convallis urna id felis
++ Nulla porta tempus sapien
+
+Here is an ordered list of items, typically rendered as a numbered list:
+
+1. Donec non tortor in arcu mollis feugiat
+2. Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+3. Donec id eros eget quam aliquam gravida
+4. Vivamus convallis urna id felis
+5. Nulla porta tempus sapien
+
+### Tables
+
+| Title | Title |
+| ------| ----- |
+| Text  | Text  |
+| Text  | Text  |
+| Text  | Text  |

@@ -22,7 +22,7 @@ navigation:
   - text: Style Guide
     url: /style-guide/
 footer:
-  content: '&copy;'
+  content: '&copy; All rights reserved.'
   has_social: true
 plugins:
   - jekyll-paginate

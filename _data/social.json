@@ -1,11 +1,6 @@
 {
   "links": [
     {
-      "title": "Twitter",
-      "icon": "fa-twitter",
-      "url": "https://twitter.com/MRoberti"
-    },
-    {
       "title": "Medium",
       "icon": "fa-medium",
       "url": "https://medium.com/@robertimaximilien"
@@ -19,6 +14,11 @@
       "title": "LinkedIn",
       "icon": "fa-linkedin",
       "url": "https://www.linkedin.com/in/maximilienroberti/"
+    },
+    {
+      "title": "Twitter",
+      "icon": "fa-twitter",
+      "url": "https://twitter.com/MRoberti"
     },
     {
       "title": "Kaggle",

@@ -24,6 +24,11 @@
       "title": "Kaggle",
       "icon": "fa-kaggle",
       "url": "https://www.kaggle.com/maroberti"
+    },
+    {
+      "title": "Email",
+      "icon": "fa-envelope",
+      "url": "mailto:robertimaximilien@gmail.com"
     }
   ]
 }

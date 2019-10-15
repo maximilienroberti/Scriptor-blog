@@ -8,6 +8,113 @@ uploadDir: images
 dataDir: _data
 pagesDir: ''
 pageLayoutKey: layout
+sourceMapping:
+  - source:
+      fieldPath: author.name
+    target:
+      file: data/author.json
+      fieldPath: name
+  - source:
+      fieldPath: author.name
+    target:
+      file: config.yml
+      fieldPath: params.header.title
+  - source:
+      fieldPath: author.email
+    target:
+      file: data/author.json
+      fieldPath: email
+  - source:
+      fieldPath: author.avatar
+    target:
+      file: data/author.json
+      fieldPath: avatar
+  - source:
+      fieldPath: 'social.links[0].url'
+    target:
+      file: data/social.json
+      fieldPath: 'links[0].url'
+  - source:
+      fieldPath: author.tagline
+    target:
+      file: content/index.md
+      fieldPath: 'sections[0].content'
+  - action: delete
+    condition: context.author.tagline
+    target:
+      file: content/index.md
+      fieldPath: 'sections[0].actions'
+  - action: delete
+    condition: context.author.name
+    target:
+      file: config.yml
+      fieldPath: params.header.logo_img
+  - source:
+      fieldPath: social.twitter.url
+    target:
+      file: data/social.json
+      fieldPath: 'links[0].url'
+  - source:
+      fieldPath: social.instagram.url
+    target:
+      file: data/social.json
+      fieldPath: 'links[1].url'
+  - source:
+      fieldPath: social.github.url
+    target:
+      file: data/social.json
+      fieldPath: 'links[2].url'
+  - source:
+      fieldPath: social.linkedin.url
+    target:
+      file: data/social.json
+      fieldPath: 'links[3].url'
+  - source:
+      fieldPath: social.devto.url
+    target:
+      file: data/social.json
+      fieldPath: 'links[4].url'
+  - action: delete
+    condition: context.social && !context.social.devto
+    target:
+      file: data/social.json
+      fieldPath: 'links[4]'
+  - action: delete
+    condition: context.social && !context.social.linkedin
+    target:
+      file: data/social.json
+      fieldPath: 'links[3]'
+  - action: delete
+    condition: context.social && !context.social.github
+    target:
+      file: data/social.json
+      fieldPath: 'links[2]'
+  - action: delete
+    condition: context.social && !context.social.instagram
+    target:
+      file: data/social.json
+      fieldPath: 'links[1]'
+  - action: delete
+    condition: context.social && !context.social.twitter
+    target:
+      file: data/social.json
+      fieldPath: 'links[0]'
+  - source:
+      fieldPath: source.title
+    target:
+      file: config.yml
+      fieldPath: 'params.footer.links[1].text'
+  - source:
+      fieldPath: source.url
+    target:
+      file: config.yml
+      fieldPath: 'params.footer.links[1].url'
+  - source:
+      value: true
+    condition: context.source.url
+    target:
+      file: config.yml
+      fieldPath: 'params.footer.links[1].new_window'
 models:
   config:
     type: config
@@ -147,6 +254,10 @@ models:
           labelField: title
           fields:
             - type: string
+              name: type
+              label: Type
+              hidden: true
+            - type: string
               name: title
               label: Title
               description: The title of the icon.
@@ -213,7 +324,6 @@ models:
     label: Tags Page
     template: tags
     file: tags.md
-    hideContent: true
     singleInstance: true
     fields:
       - type: string

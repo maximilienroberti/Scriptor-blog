@@ -13,9 +13,9 @@ navigation:
   - text: Home
     url: /
   - text: Tags
-    url: /tags/
+    url: /tags
   - text: About
-    url: /about/
+    url: /about
   - text: Resume
     url: >-
       https://drive.google.com/file/d/1pvlV0biYjQCMDy0dHgypI82lAeNsEs93/view?usp=sharing

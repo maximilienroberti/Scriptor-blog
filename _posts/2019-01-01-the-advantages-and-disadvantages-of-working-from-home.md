@@ -9,7 +9,6 @@ tags:
   - machinelearning
 layout: post
 ---
-
 This is a pragraph. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis.
 
 <!--more-->
@@ -26,7 +25,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum s
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero.
 
-#### Heading 4
+#### Heading 4 
 
 Quisque facilisis erat a dui. Nam malesuada ornare dolor. Cras gravida, diam sit amet rhoncus ornare, erat elit consectetuer erat, id egestas pede nibh eget odio. Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis.
 
@@ -42,7 +41,7 @@ Nulla tempus tortor nec nunc volutpat commodo. Vivamus efficitur imperdiet velit
 
 **This is bold text**
 
-*This is italic text*
+_This is italic text_
 
 ~~Strikethrough~~
 
@@ -54,11 +53,11 @@ Nulla tempus tortor nec nunc volutpat commodo. Vivamus efficitur imperdiet velit
 
 ## Quoting
 
->“Creativity is allowing yourself to make mistakes. Design is knowing which ones to keep.”
+> “Creativity is allowing yourself to make mistakes. Design is knowing which ones to keep.”
 
 Lorem ipsum dolor sit amet, `consectetuer adipiscing` elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero.
 
-***
+- - -
 
 ## Code Blocks
 
@@ -141,11 +140,11 @@ Lorem ipsum dolor sit amet, `consectetuer adipiscing` elit. Morbi commodo, ipsum
 
 Here is an unordered list of items, typically rendered as a bulleted list:
 
-+ Donec non tortor in arcu mollis feugiat
-+ Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-+ Donec id eros eget quam aliquam gravida
-+ Vivamus convallis urna id felis
-+ Nulla porta tempus sapien
+* Donec non tortor in arcu mollis feugiat
+* Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+* Donec id eros eget quam aliquam gravida
+* Vivamus convallis urna id felis
+* Nulla porta tempus sapien
 
 Here is an ordered list of items, typically rendered as a numbered list:
 
@@ -158,7 +157,7 @@ Here is an ordered list of items, typically rendered as a numbered list:
 ### Tables
 
 | Title | Title |
-| ------| ----- |
+| ----- | ----- |
 | Text  | Text  |
 | Text  | Text  |
 | Text  | Text  |

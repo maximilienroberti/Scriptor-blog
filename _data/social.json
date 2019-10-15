@@ -1,11 +1,6 @@
 {
   "links": [
     {
-      "title": "Twitter",
-      "icon": "fa-twitter",
-      "url": "https://twitter.com/MRoberti"
-    },
-    {
       "title": "Medium",
       "icon": "fa-medium",
       "url": "https://medium.com/@robertimaximilien"
@@ -21,9 +16,19 @@
       "url": "https://www.linkedin.com/in/maximilienroberti/"
     },
     {
+      "title": "Twitter",
+      "icon": "fa-twitter",
+      "url": "https://twitter.com/MRoberti"
+    },
+    {
       "title": "Kaggle",
       "icon": "fa-kaggle",
       "url": "https://www.kaggle.com/maroberti"
+    },
+    {
+      "title": "Email",
+      "icon": "fa-envelope",
+      "url": "mailto:robertimaximilien@gmail.com"
     }
   ]
 }

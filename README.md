@@ -2,11 +2,9 @@
 
 This is a simple personal Jekyll website compatible with Stackbit/Netlify and GitHub Pages.
 
-This repersitory has been cloned from [Scriptor repersitory](https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme) and modified to make it compatible with GitHub Pages. 
+This repersitory has been cloned from [Scriptor repersitory](https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme) and modified to make it more compatible with GitHub Pages. 
 
 [Live Demo](https://maximilienroberti.github.io/) &nbsp;
-
-![Scriptor-Jekyll-Theme](images/scriptor-jekyll.png)
 
 ## Features
 
@@ -38,6 +36,10 @@ Jekyll generates your static site to the **_site** directory by default. You can
 ### Netlify
 
 This theme is prepared to be hosted on [Netlify](https://www.netlify.com/). All you need to do is create a new private repository on GitHub or GitLab. Upload the theme to the repository and link your repo to Netlify. Please check [this link](https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/#step-2-link-to-your-github) with the step by step guidelines.
+
+### GitHub Pages
+
+This theme can be deployed on GitHub pages. To do so, you just have to fork this repersitory, rename it by username.github.io, do a first push then go to https://username.github.io .
 
 ### Amazon S3
 

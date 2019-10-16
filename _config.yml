@@ -5,7 +5,7 @@ description: >-
   This is the personal website of Maximilien Roberti. He is a software engineer
   specilized in Artificial Inteligence.
 baseurl: ''
-url: 'https://important-oak-4747e.netlify.com/'
+url: 'https://robertimaximilien.github.io/'
 permalink: '/:title'
 favicon: /images/logomr-v5.png
 disqus: maximilienroberti

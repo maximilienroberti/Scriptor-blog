@@ -1,8 +1,10 @@
-# Scriptor
+# maximilienroberti.github.io
 
-Scriptor is a simple, minimal, clean & responsive Jekyll theme for writers.
+This is a simple personal Jekyll website compatible with Stackbit/Netlify and GitHub Pages.
 
-[Live Demo](https://scriptor-jekyll.netlify.com/) &nbsp; | &nbsp; [Download](https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme/archive/master.zip) &nbsp;
+This repersitory has been cloned from [Scriptor repersitory](https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme) and modified to make it compatible with GitHub Pages. 
+
+[Live Demo](https://maximilienroberti.github.io/) &nbsp;
 
 ![Scriptor-Jekyll-Theme](images/scriptor-jekyll.png)
 

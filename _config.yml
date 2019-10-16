@@ -8,7 +8,7 @@ baseurl: ''
 url: 'https://important-oak-4747e.netlify.com/'
 permalink: '/:title'
 favicon: /images/logomr-v5.png
-disqus: maxroberti
+disqus: justgoodthemes
 navigation:
   - text: Home
     url: /

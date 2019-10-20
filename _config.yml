@@ -7,7 +7,7 @@ description: >-
 baseurl: ''
 url: 'https://maximilienroberti.github.io'
 permalink: '/:title'
-favicon: /images/logomr-v5.png
+favicon: /images/logomr-v6.svg
 disqus: maximilienroberti
 navigation:
   - text: Home

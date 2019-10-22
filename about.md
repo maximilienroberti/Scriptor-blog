@@ -12,6 +12,6 @@ His work has been recognized by Communication Arts, Print, How, ID, IdN, AIGA, E
 
 As a hobby, John Doe authors the most influential design blog in Lithuania with over 100,000 page views a month. He lives in Vilnius with his beautiful wife, two boys and one girl.
 
-He currently living in Belgium ...
+He is currently living in Belgium ...
 
 _Thank You for reading!_

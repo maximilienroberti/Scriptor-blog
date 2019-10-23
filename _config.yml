@@ -3,7 +3,7 @@ lang: en-US
 title: Maximilien Roberti
 description: >-
   This is the personal website of Maximilien Roberti. He is a software engineer
-  specilized in Artificial Inteligence.
+  specilized in Artificial Inteligence. This website is under construction.
 baseurl: ''
 url: 'https://maximilienroberti.github.io'
 permalink: '/:title'

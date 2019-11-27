@@ -1,9 +1,7 @@
 accent_color: '#2d72d9'
 lang: en-US
 title: Maximilien Roberti
-description: >-
-  This is the personal website of Maximilien Roberti. He is a software engineer
-  specilized in Artificial Inteligence. This website is under construction.
+description: This website is under construction.
 baseurl: ''
 url: 'https://maximilienroberti.github.io'
 permalink: '/:title'

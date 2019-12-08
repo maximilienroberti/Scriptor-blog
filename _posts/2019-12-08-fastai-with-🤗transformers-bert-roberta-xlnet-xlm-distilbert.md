@@ -269,7 +269,7 @@ In the [Kaggle example](https://www.kaggle.com/maroberti/fastai-with-transformer
 
 ## 📋Conclusion
 
-In this article, I explain how to combine the transformers library with the beloved fastai library. It aims to make you understand where to look and modify both libraries to make them work together. Likely, it allows you to use **Slanted Triangular Learning Rates**, **Discriminate Learning Rate** and **\*\*even** Gradual Unfreezing\*\*. As a result, without even tunning the parameters, you can obtain rapidly state-of-the-art results.
+In this article, I explain how to combine the transformers library with the beloved fastai library. It aims to make you understand where to look and modify both libraries to make them work together. Likely, it allows you to use **Slanted Triangular Learning Rates**, **Discriminate Learning Rate** and even **Gradual Unfreezing**. As a result, without even tunning the parameters, you can obtain rapidly state-of-the-art results.
 
 This year, the transformers became an essential tool for NLP. Because of that, I think that pre-trained transformers architectures will be integrated soon to future versions of fastai. Meanwhile, this tutorial is a good starter.
 

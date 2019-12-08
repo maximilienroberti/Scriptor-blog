@@ -177,7 +177,7 @@ One way to access them is to create a custom model.
 
 <script src="https://gist.github.com/maximilienroberti/fc0e2e4a8e3ff018ecf464bcf8551ae8.js"></script>
 
-To make our transformers adapted to multiclass classification, before loading the pre-trained model, we need to precise the number of labels. To do so, you can modify the config instance or either modify like in [_Keita Kurita_’s article](https://mlexplained.com/2019/05/13/a-tutorial-to-fine-tuning-bert-with-fast-ai/) (Section: _Initializing the Learner_) the num_labels argument.
+To make our transformers adapted to multiclass classification, before loading the pre-trained model, we need to precise the number of labels. To do so, you can modify the config instance or either modify like in [_Keita Kurita_’s article](https://mlexplained.com/2019/05/13/a-tutorial-to-fine-tuning-bert-with-fast-ai/) (Section: _Initializing the Learner_) the `num_labels` argument.
 
 <script src="https://gist.github.com/maximilienroberti/39901c6b6398bffc0012c974644f6007.js"></script>
 
@@ -205,7 +205,7 @@ In this case, we can split our model in this way:
 
 <script src="https://gist.github.com/maximilienroberti/0c6df3c2ee37f57196f995cba81cee9d.js"></script>
 
-Note that I didn’t found any document that has studied the influence of **Discriminative Learning Rate** and **Gradual Unfreezing** or even **Slanted Triangular Learning Rates** with transformer architectures. \*\*\*\*Therefore, using these tools does not guarantee better results. If you found any interesting documents, please let us know in the comment.
+Note that I didn’t found any document that has studied the influence of **Discriminative Learning Rate** and **Gradual Unfreezing** or even **Slanted Triangular Learning Rates** with transformer architectures. Therefore, using these tools does not guarantee better results. If you found any interesting documents, please let us know in the comment.
 
 ### Train
 
@@ -233,11 +233,11 @@ The graph of the loss would look like this:
 
 ![](https://cdn-images-1.medium.com/max/2000/1*dJyzyjsaMaVUhea9beSkCA.png)
 
-We then unfreeze the second group and repeat the operations until all the groups are unfrozen. If you want to use **Discriminative Learning Rate** you can use slice as follow :
+We then unfreeze the second group and repeat the operations until all the groups are unfrozen. If you want to use **Discriminative Learning Rate** you can use `slice` as follow :
 
 <script src="https://gist.github.com/maximilienroberti/738d8049d50dcbc39fd935ec87ef0d92.js"></script>
 
-To unfreeze all the groups, use learner.unfreeze() .
+To unfreeze all the groups, use `learner.unfreeze() `.
 
 ### Creating prediction
 

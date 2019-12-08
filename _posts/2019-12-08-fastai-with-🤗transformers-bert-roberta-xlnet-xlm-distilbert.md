@@ -257,8 +257,7 @@ As specified in _Keita Kurita_’s [article](https://mlexplained.com/2019/05/13/
 
 <script src="https://gist.github.com/maximilienroberti/c474f55774a107fd02ef7f531e3bbceb.js"></script>
 
-```python
-#header h1 { 
+```python 
 test_preds = get_preds_as_nparray(DatasetType.Test)
 sample_submission = pd.read_csv(DATA_ROOT / 'sampleSubmission.csv')
 sample_submission['Sentiment'] = np.argmax(test_preds,axis=1)

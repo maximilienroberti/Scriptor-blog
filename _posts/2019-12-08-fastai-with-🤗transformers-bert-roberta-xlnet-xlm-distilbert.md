@@ -58,7 +58,6 @@ The chosen task is a multi-class text classification on [Movie Reviews](https://
 
 The [dataset](https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews/data) and the respective [Notebook](https://www.kaggle.com/maroberti/fastai-with-transformers-bert-roberta) of this article can be found on Kaggle.
 
-
 For each text movie review, the model has to predict a label for the sentiment. We evaluate the outputs of the model on classification _accuracy_. The sentiment labels are:
 
 * 0 →Negative
@@ -134,11 +133,11 @@ In this implementation, be careful about 3 things:
 
 Below, you can find the resume of each pre-process requirement for the 5 model types used in this tutorial. You can also find this information on the [Hugging Face documentation](https://huggingface.co/transformers/) in each model section.
 
-*  BERT: \[CLS] + tokens + \[SEP] + padding
-*  DistilBERT: \[CLS] + tokens + \[SEP] + padding
-*  RoBERTa: \[CLS] + prefix_space + tokens + \[SEP] + padding
-*  XLM: \[CLS] + tokens + \[SEP] + padding
-*  XLNet: padding + \[CLS] + tokens + \[SEP]
+* BERT: \[CLS] + tokens + \[SEP] + padding
+* DistilBERT: \[CLS] + tokens + \[SEP] + padding
+* RoBERTa: \[CLS] + prefix_space + tokens + \[SEP] + padding
+* XLM: \[CLS] + tokens + \[SEP] + padding
+* XLNet: padding + \[CLS] + tokens + \[SEP]
 
 It is worth noting that we don’t add padding in this part of the implementation. 
 As we will see later, `fastai` manage it automatically during the creation of the `DataBunch`.
@@ -159,36 +158,36 @@ It consists of using the functions `convert_tokens_to_ids` and `convert_ids_to_t
 
 **Custom processor**
 
-Now that we have our custom **tokenizer** and **numericalizer**, we can create the custom **processor**. Notice we are passing the include_bos = False and include_eos = False options. This is because fastai adds its own special tokens by default which interferes with the \[CLS] and \[SEP] tokens added by our custom tokenizer.
+Now that we have our custom **tokenizer** and **numericalizer**, we can create the custom **processor**. Notice we are passing the `include_bos = False` and `include_eos = False` options. This is because `fastai` adds its own special tokens by default which interferes with the `[CLS]` and `[SEP]` tokens added by our custom tokenizer.
 
- <iframe src="https://medium.com/media/42ad6c6b8cfb2ec92d3c3fbed8f5575a" frameborder=0></iframe>
+<script src="https://gist.github.com/maximilienroberti/72545fb0db436fe7dc7fffb259978514.js"></script>
 
 **Setting up the DataBunch**
 
-For the DataBunch creation, you have to pay attention to set the processor argument to our new custom processor transformer_processor and manage correctly the padding.
+For the `DataBunch` creation, you have to pay attention to set the `processor` argument to our new custom processor `transformer_processor` and manage correctly the padding.
 
 As mentioned in the Hugging Face documentation, BERT, RoBERTa, XLM, and DistilBERT are models with absolute position embeddings, so it’s usually advised to pad the inputs on the right rather than the left. Regarding XLNET, it is a model with relative position embeddings, therefore, you can either pad the inputs on the right or on the left.
 
- <iframe src="https://medium.com/media/94465a3efbc8dc9e9626898bcf4a2e6d" frameborder=0></iframe>
+<script src="https://gist.github.com/maximilienroberti/482749903c79deb7fc1047aef3c9ca36.js"></script>
 
 ### Custom model
 
-As mentioned [here](https://github.com/huggingface/transformers#models-always-output-tuples), every model's forward method always outputs a tuple with various elements depending on the model and the configuration parameters. In our case, we are interested to access only to the logits. 
+As mentioned [here](https://github.com/huggingface/transformers#models-always-output-tuples), every model's forward method always outputs a `tuple` with various elements depending on the model and the configuration parameters. In our case, we are interested to access only to the logits. 
 One way to access them is to create a custom model.
 
- <iframe src="https://medium.com/media/03849baa5f99f03c02192addace559b9" frameborder=0></iframe>
+<script src="https://gist.github.com/maximilienroberti/fc0e2e4a8e3ff018ecf464bcf8551ae8.js"></script>
 
 To make our transformers adapted to multiclass classification, before loading the pre-trained model, we need to precise the number of labels. To do so, you can modify the config instance or either modify like in [_Keita Kurita_’s article](https://mlexplained.com/2019/05/13/a-tutorial-to-fine-tuning-bert-with-fast-ai/) (Section: _Initializing the Learner_) the num_labels argument.
 
- <iframe src="https://medium.com/media/cdcea6fa7f2f625f64eb0bc3d56cab4d" frameborder=0></iframe>
+<script src="https://gist.github.com/maximilienroberti/39901c6b6398bffc0012c974644f6007.js"></script>
 
 ### Learner : Custom Optimizer / Custom Metric
 
-In pytorch-transformers, Hugging Face had implemented two specific optimizers — BertAdam and OpenAIAdam — that have been replaced by a single AdamW optimizer.
-This optimizer matches Pytorch Adam optimizer Api, therefore, it becomes straightforward to integrate it within fastai.
-Note that for reproducing BertAdam specific behavior, you have to set correct_bias = False.
+In `pytorch-transformers`, Hugging Face had implemented two specific optimizers — BertAdam and OpenAIAdam — that have been replaced by a single AdamW optimizer.
+This optimizer matches Pytorch Adam optimizer Api, therefore, it becomes straightforward to integrate it within `fastai`.
+Note that for reproducing BertAdam specific behavior, you have to set `correct_bias = False`.
 
- <iframe src="https://medium.com/media/bd28c7255eb5ee1fcb89f5b9d7350e31" frameborder=0></iframe>
+<script src="https://gist.github.com/maximilienroberti/d614c32c8f200ccf4505de878520a8f1.js"></script>
 
 ### Discriminative Fine-tuning and Gradual unfreezing
 
@@ -204,13 +203,13 @@ For example, if we use the DistilBERT model and that we observe his architecture
 
 In this case, we can split our model in this way:
 
- <iframe src="https://medium.com/media/22b8ac3c3ea37ae7c1c12323bc8b93e8" frameborder=0></iframe>
+<script src="https://gist.github.com/maximilienroberti/0c6df3c2ee37f57196f995cba81cee9d.js"></script>
 
 Note that I didn’t found any document that has studied the influence of **Discriminative Learning Rate** and **Gradual Unfreezing** or even **Slanted Triangular Learning Rates** with transformer architectures. \*\*\*\*Therefore, using these tools does not guarantee better results. If you found any interesting documents, please let us know in the comment.
 
 ### Train
 
-Now we can finally use all the fastai build-in features to train our model. Like the ULMFiT method, we will use **Slanted Triangular Learning Rates, Discriminate Learning Rate** and **gradually unfreeze** the model.
+Now we can finally use all the `fastai` build-in features to train our model. Like the ULMFiT method, we will use **Slanted Triangular Learning Rates, Discriminate Learning Rate** and **gradually unfreeze** the model.
 
 Therefore, we first freeze all the groups but the classifier with :
 
@@ -218,9 +217,9 @@ Therefore, we first freeze all the groups but the classifier with :
 learner.freeze_to(-1)
 ```
 
-For **Slanted Triangular Learning Rates** you have to use the function fit_one_cycle. For more information, please check the fastai documentation [here](https://docs.fast.ai/callbacks.one_cycle.html).
+For **Slanted Triangular Learning Rates** you have to use the function `fit_one_cycle`. For more information, please check the fastai documentation [here](https://docs.fast.ai/callbacks.one_cycle.html).
 
-To use our fit_one_cycle we will need an optimum learning rate. We can find this learning rate by using a learning rate finder, which can be called by using [lr_find](https://docs.fast.ai/callbacks.lr_finder.html#callbacks.lr_finder). Our graph would look something like this:
+To use our `fit_one_cycle` we will need an optimum learning rate. We can find this learning rate by using a learning rate finder, which can be called by using [`lr_find`](https://docs.fast.ai/callbacks.lr_finder.html#callbacks.lr_finder). Our graph would look something like this:
 
 ![](https://cdn-images-1.medium.com/max/2000/1*p0EmMlM1i5AG-OQ3uJoAog.png)
 
@@ -236,7 +235,7 @@ The graph of the loss would look like this:
 
 We then unfreeze the second group and repeat the operations until all the groups are unfrozen. If you want to use **Discriminative Learning Rate** you can use slice as follow :
 
- <iframe src="https://medium.com/media/deb0695c2ed4ad5f70721b38c182178d" frameborder=0></iframe>
+<script src="https://gist.github.com/maximilienroberti/738d8049d50dcbc39fd935ec87ef0d92.js"></script>
 
 To unfreeze all the groups, use learner.unfreeze() .
 
@@ -244,7 +243,7 @@ To unfreeze all the groups, use learner.unfreeze() .
 
 Now that we have trained the model, we want to generate predictions from the test dataset.
 
-As specified in _Keita Kurita_’s [article](https://mlexplained.com/2019/05/13/a-tutorial-to-fine-tuning-bert-with-fast-ai/), as the function get_preds does not return elements in order by default, you will have to resort the elements into their correct order.
+As specified in _Keita Kurita_’s [article](https://mlexplained.com/2019/05/13/a-tutorial-to-fine-tuning-bert-with-fast-ai/), as the function `get_preds` does not return elements in order by default, you will have to resort the elements into their correct order.
 
 <script src="https://gist.github.com/maximilienroberti/c474f55774a107fd02ef7f531e3bbceb.js"></script>
 
@@ -252,9 +251,9 @@ In the [Kaggle example](https://www.kaggle.com/maroberti/fastai-with-transformer
 
 ## 📋Conclusion
 
-In this article, I explain how to combine the transformers library with the beloved fastai library. It aims to make you understand where to look and modify both libraries to make them work together. Likely, it allows you to use **Slanted Triangular Learning Rates**, **Discriminate Learning Rate** and even **Gradual Unfreezing**. As a result, without even tunning the parameters, you can obtain rapidly state-of-the-art results.
+In this article, I explain how to combine the `transformers` library with the beloved `fastai` library. It aims to make you understand where to look and modify both libraries to make them work together. Likely, it allows you to use **Slanted Triangular Learning Rates**, **Discriminate Learning Rate** and even **Gradual Unfreezing**. As a result, without even tunning the parameters, you can obtain rapidly state-of-the-art results.
 
-This year, the transformers became an essential tool for NLP. Because of that, I think that pre-trained transformers architectures will be integrated soon to future versions of fastai. Meanwhile, this tutorial is a good starter.
+This year, the transformers became an essential tool for NLP. Because of that, I think that pre-trained transformers architectures will be integrated soon to future versions of `fastai`. Meanwhile, this tutorial is a good starter.
 
 I hope you enjoyed this first article and found it useful. 
 Thanks for reading and don’t hesitate in leaving questions or suggestions.

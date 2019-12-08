@@ -1,5 +1,5 @@
 ---
-title: The big story in short
+title: About
 description: An optional about page for Scriptor Jekyll theme
 feature_image: /images/profile_picture_5_3.jpg
 layout: page

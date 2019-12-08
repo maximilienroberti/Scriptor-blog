@@ -23,6 +23,13 @@ The first time I heard about ULMFiT was during a [fast.ai course](https://course
 Since the introduction of ULMFiT, **Transfer Learning** became very popular in NLP and yet Google (BERT, Transformer-XL, XLNet), Facebook (RoBERTa, XLM) and even OpenAI (GPT, GPT-2) begin to pre-train their own model on very large corpora. This time, instead of using the AWD-LSTM neural network, they all used a more powerful architecture based on the Transformer (cf. [Attention is all you need](https://arxiv.org/abs/1706.03762)).
 
 Although these models are powerful, fastai do not integrate all of them. Fortunately, [Hugging Face](https://huggingface.co/) 🤗 created the well know [transformers library](https://github.com/huggingface/transformers). Formerly known as pytorch-transformers or pytorch-pretrained-bert, this library brings together over 40 state-of-the-art pre-trained NLP models (BERT, GPT-2, RoBERTa, CTRL…). The implementation gives interesting additional utilities like tokenizer, optimizer or scheduler.
+
+```
+jdklmqsjdfdjslkd
+```
+
+`Hello`
+
 [**huggingface/transformers**
 _State-of-the-art Natural Language Processing for TensorFlow 2.0 and PyTorch 🤗 Transformers (formerly known as…_github.com](https://github.com/huggingface/transformers)
 
@@ -248,7 +255,15 @@ Now that we have trained the model, we want to generate predictions from the tes
 
 As specified in _Keita Kurita_’s [article](https://mlexplained.com/2019/05/13/a-tutorial-to-fine-tuning-bert-with-fast-ai/), as the function get_preds does not return elements in order by default, you will have to resort the elements into their correct order.
 
- <iframe src="https://medium.com/media/6e3d204274b352460cab28c7e93b3d5c" frameborder=0></iframe>
+ <iframe src="https://gist.github.com/maximilienroberti/c474f55774a107fd02ef7f531e3bbceb.js" frameborder=0></iframe>
+
+
+
+<iframe src="https://gist.github.com/maximilienroberti/c474f55774a107fd02ef7f531e3bbceb#file-get_preds_as_nparray-py" frameborder=0></iframe>
+
+https://gist.github.com/maximilienroberti/c474f55774a107fd02ef7f531e3bbceb#file-get_preds_as_nparray-py
+
+<script src="https://gist.github.com/maximilienroberti/c474f55774a107fd02ef7f531e3bbceb.js"></script>
 
 In the [Kaggle example](https://www.kaggle.com/maroberti/fastai-with-transformers-bert-roberta), without playing too much with the parameters, we get a Public Score of 0.70059, which leads us to the 5th position on the leaderboard!
 

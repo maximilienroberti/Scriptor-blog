@@ -255,14 +255,6 @@ Now that we have trained the model, we want to generate predictions from the tes
 
 As specified in _Keita Kurita_’s [article](https://mlexplained.com/2019/05/13/a-tutorial-to-fine-tuning-bert-with-fast-ai/), as the function get_preds does not return elements in order by default, you will have to resort the elements into their correct order.
 
- <iframe src="https://gist.github.com/maximilienroberti/c474f55774a107fd02ef7f531e3bbceb.js" frameborder=0></iframe>
-
-
-
-<iframe src="https://gist.github.com/maximilienroberti/c474f55774a107fd02ef7f531e3bbceb#file-get_preds_as_nparray-py" frameborder=0></iframe>
-
-https://gist.github.com/maximilienroberti/c474f55774a107fd02ef7f531e3bbceb#file-get_preds_as_nparray-py
-
 <script src="https://gist.github.com/maximilienroberti/c474f55774a107fd02ef7f531e3bbceb.js"></script>
 
 In the [Kaggle example](https://www.kaggle.com/maroberti/fastai-with-transformers-bert-roberta), without playing too much with the parameters, we get a Public Score of 0.70059, which leads us to the 5th position on the leaderboard!

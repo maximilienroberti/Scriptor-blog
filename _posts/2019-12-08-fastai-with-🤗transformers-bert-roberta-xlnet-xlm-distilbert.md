@@ -4,6 +4,7 @@ description: >-
   A tutorial to implement state-of-the-art NLP models with Fastai for Sentiment
   Analysis
 date: 2019-12-08T20:42:58.842Z
+feature_image: /images/fastai-transformers-1.png
 tags:
   - NLP
   - Machine Learning

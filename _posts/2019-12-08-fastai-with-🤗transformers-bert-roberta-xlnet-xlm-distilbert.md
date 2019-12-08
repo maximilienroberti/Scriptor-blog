@@ -19,7 +19,7 @@ In early 2018, [Jeremy Howard](undefined) (co-founder of fast.ai) and [Sebastian
 {% include image_caption.html imageurl="https://cdn-images-1.medium.com/max/3038/0*HUhpxwRcyNFEXNNd" title="Apple Super" 
 caption="ULMFiT requires less data than previous approaches. (Howard and Ruder, ACL 2018)" %}
 
-![*ULMFiT requires less data than previous approaches.* ([Howard and Ruder, ACL 2018](https://arxiv.org/abs/1801.06146))](https://cdn-images-1.medium.com/max/3038/0*HUhpxwRcyNFEXNNd)
+![](https://cdn-images-1.medium.com/max/3038/0*HUhpxwRcyNFEXNNd)*(ULMFiT requires less data than previous approaches.)*
 
 The first time I heard about ULMFiT was during a [fast.ai course](https://course.fast.ai/videos/?lesson=4) given by Jeremy Howard. He demonstrated how it is easy — thanks to the fastai library — to implement the complete ULMFiT method with only a few lines of codes. In his demo, he used an AWD-LSTM neural network pre-trained on Wikitext-103 and get rapidly state-of-the-art results. He also explained key techniques — also demonstrated in ULMFiT — to fine-tune models like **Discriminate Learning Rate**, **Gradual Unfreezing** or **Slanted Triangular Learning Rates**.
 

@@ -19,57 +19,57 @@ In early 2018, [Jeremy Howard](undefined) (co-founder of fast.ai) and [Sebastian
 {% include image_caption.html imageurl="https://cdn-images-1.medium.com/max/3038/0*HUhpxwRcyNFEXNNd" title="ALMFiT" 
 caption="ULMFiT requires less data than previous approaches. (Howard and Ruder, ACL 2018)" %}
 
-
-The first time I heard about ULMFiT was during a [fast.ai course](https://course.fast.ai/videos/?lesson=4) given by Jeremy Howard. He demonstrated how it is easy — thanks to the fastai library — to implement the complete ULMFiT method with only a few lines of codes. In his demo, he used an AWD-LSTM neural network pre-trained on Wikitext-103 and get rapidly state-of-the-art results. He also explained key techniques — also demonstrated in ULMFiT — to fine-tune models like **Discriminate Learning Rate**, **Gradual Unfreezing** or **Slanted Triangular Learning Rates**.
+The first time I heard about ULMFiT was during a [fast.ai course](https://course.fast.ai/videos/?lesson=4) given by Jeremy Howard. He demonstrated how it is easy — thanks to the `fastai` library — to implement the complete ULMFiT method with only a few lines of codes. In his demo, he used an AWD-LSTM neural network pre-trained on Wikitext-103 and get rapidly state-of-the-art results. He also explained key techniques — also demonstrated in ULMFiT — to fine-tune models like **Discriminate Learning Rate**, **Gradual Unfreezing** or **Slanted Triangular Learning Rates**.
 
 Since the introduction of ULMFiT, **Transfer Learning** became very popular in NLP and yet Google (BERT, Transformer-XL, XLNet), Facebook (RoBERTa, XLM) and even OpenAI (GPT, GPT-2) begin to pre-train their own model on very large corpora. This time, instead of using the AWD-LSTM neural network, they all used a more powerful architecture based on the Transformer (cf. [Attention is all you need](https://arxiv.org/abs/1706.03762)).
 
-Although these models are powerful, fastai do not integrate all of them. Fortunately, [Hugging Face](https://huggingface.co/) 🤗 created the well know [transformers library](https://github.com/huggingface/transformers). Formerly known as pytorch-transformers or pytorch-pretrained-bert, this library brings together over 40 state-of-the-art pre-trained NLP models (BERT, GPT-2, RoBERTa, CTRL…). The implementation gives interesting additional utilities like tokenizer, optimizer or scheduler.
+Although these models are powerful, `fastai` do not integrate all of them. Fortunately, [Hugging Face](https://huggingface.co/) 🤗 created the well know [`transformers` library](https://github.com/huggingface/transformers). Formerly known as `pytorch-transformers` or `pytorch-pretrained-bert`, this library brings together over 40 state-of-the-art pre-trained NLP models (BERT, GPT-2, RoBERTa, CTRL…). The implementation gives interesting additional utilities like tokenizer, optimizer or scheduler.
 
-The transformers library can be self-sufficient but incorporating it within the fastai library provides simpler implementation compatible with powerful fastai tools like **Discriminate Learning Rate**, **Gradual Unfreezing** or **Slanted Triangular Learning Rates**. The point here is to allow anyone — expert or non-expert — to get easily state-of-the-art results and to “make NLP uncool again”.
+The `transformers` library can be self-sufficient but incorporating it within the `fastai` library provides simpler implementation compatible with powerful `fastai` tools like **Discriminate Learning Rate**, **Gradual Unfreezing** or **Slanted Triangular Learning Rates**. The point here is to allow anyone — expert or non-expert — to get easily state-of-the-art results and to “make NLP uncool again”.
 
-It is worth noting that integrating the Hugging Face transformers library in fastai has already been demonstrated in:
+It is worth noting that integrating the Hugging Face `transformers` library in `fastai` has already been demonstrated in:
 
-* _Keita Kurita_’s article [A Tutorial to Fine-Tuning BERT with Fast AI](https://mlexplained.com/2019/05/13/a-tutorial-to-fine-tuning-bert-with-fast-ai/) which makes pytorch_pretrained_bert library compatible with fastai.
-* [Dev Sharma](undefined)’s article [Using RoBERTa with Fastai for NLP](https://medium.com/analytics-vidhya/using-roberta-with-fastai-for-nlp-7ed3fed21f6c) which makes pytorch_transformers library compatible with fastai.
+* _Keita Kurita_’s article [A Tutorial to Fine-Tuning BERT with Fast AI](https://mlexplained.com/2019/05/13/a-tutorial-to-fine-tuning-bert-with-fast-ai/) which makes `pytorch_pretrained_bert` library compatible with `fastai`.
+* [Dev Sharma](undefined)’s article [Using RoBERTa with Fastai for NLP](https://medium.com/analytics-vidhya/using-roberta-with-fastai-for-nlp-7ed3fed21f6c) which makes `pytorch_transformers` library compatible with `fastai`.
 
-Although these articles are of high quality, some part of their demonstration is not anymore compatible with the last version of transformers.
+Although these articles are of high quality, some part of their demonstration is not anymore compatible with the last version of `transformers`.
 
 ## 🛠 Integrating transformers with fastai for multiclass classification
 
-Before beginning the implementation, note that integrating transformers within fastai can be done in multiple ways. For that reason, I brought — what I think are — the most generic and flexible solutions. More precisely, I tried to make the minimum modification in both libraries while making them compatible with the maximum amount of transformer architectures. However, if you find a clever way to make this implementation, please let us know in the comment section!
+Before beginning the implementation, note that integrating `transformers` within `fastai` can be done in multiple ways. For that reason, I brought — what I think are — the most generic and flexible solutions. More precisely, I tried to make the minimum modification in both libraries while making them compatible with the maximum amount of transformer architectures. However, if you find a clever way to make this implementation, please let us know in the comment section!
 
 A Jupiter Notebook version of this tutorial is available on this [Kaggle kernel](https://www.kaggle.com/maroberti/fastai-with-transformers-bert-roberta).
 
 ### Libraries Installation
 
-First, you will need to install the fastai and transformers libraries. To do so, just follow the instructions [here](https://github.com/fastai/fastai/blob/master/README.md#installation) and [here](https://github.com/huggingface/transformers#installation).
+First, you will need to install the `fastai` and `transformers` libraries. To do so, just follow the instructions [here](https://github.com/fastai/fastai/blob/master/README.md#installation) and [here](https://github.com/huggingface/transformers#installation).
 
-For this demonstration, I used Kaggle which already has the fastai library installed. So I just installed transformers with the command :
+For this demonstration, I used Kaggle which already has the `fastai` library installed. So I just installed `transformers` with the command :
 
 ```
 pip install transformers
 ```
 
-The versions of the libraries used for this demonstration are fastai 1.0.58 and transformers 2.1.1.
+The versions of the libraries used for this demonstration are `fastai` 1.0.58 and transformers `2.1.1`.
 
 ### 🎬 The example task
 
 The chosen task is a multi-class text classification on [Movie Reviews](https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews/overview).
 
 The [dataset](https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews/data) and the respective [Notebook](https://www.kaggle.com/maroberti/fastai-with-transformers-bert-roberta) of this article can be found on Kaggle.
-[**Sentiment Analysis on Movie Reviews**
-_Download Open Datasets on 1000s of Projects + Share Projects on One Platform. Explore Popular Topics Like Government…_www.kaggle.com](https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews/data)
+
 
 For each text movie review, the model has to predict a label for the sentiment. We evaluate the outputs of the model on classification _accuracy_. The sentiment labels are:
 
-0 →Negative
-1 →Somewhat negative
-2 →Neutral
-3 →Somewhat positive
-4 →Positive
+* 0 →Negative
+* 1 →Somewhat negative
+* 2 →Neutral
+* 3 →Somewhat positive
+* 4 →Positive
 
-The data is loaded into a DataFrame using pandas.
+The data is loaded into a `DataFrame` using `pandas`.
+
+<script src="https://gist.github.com/maximilienroberti/d98655682028595bb739e9f65ebe9d43.js"></script>
 
  <iframe src="https://medium.com/media/b728f8c3d1d71536b2705995cb54c549" frameborder=0></iframe>
 

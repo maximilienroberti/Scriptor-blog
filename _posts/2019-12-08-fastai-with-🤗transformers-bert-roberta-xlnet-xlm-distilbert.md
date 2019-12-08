@@ -50,7 +50,7 @@ For this demonstration, I used Kaggle which already has the `fastai` library ins
 pip install transformers
 ```
 
-The versions of the libraries used for this demonstration are `fastai` 1.0.58 and transformers `2.1.1`.
+The versions of the libraries used for this demonstration are `fastai` 1.0.58 and `transformers` 2.1.1.
 
 ### 🎬 The example task
 
@@ -71,25 +71,23 @@ The data is loaded into a `DataFrame` using `pandas`.
 
 <script src="https://gist.github.com/maximilienroberti/d98655682028595bb739e9f65ebe9d43.js"></script>
 
- <iframe src="https://medium.com/media/b728f8c3d1d71536b2705995cb54c549" frameborder=0></iframe>
-
 ### Main transformers classes
 
-In transformers, each model architecture is associated with 3 main types of classes:
+In `transformers`, each model architecture is associated with 3 main types of classes:
 
 * A **model class** to load/store a particular pre-train model.
 * A **tokenizer class** to pre-process the data and make it compatible with a particular model.
 * A **configuration class** to load/store the configuration of a particular model.
 
-For example, if you want to use the BERT architecture for text classification, you would use [BertForSequenceClassification](https://huggingface.co/transformers/model_doc/bert.html#bertforsequenceclassification) for the **model class**, [BertTokenizer](https://huggingface.co/transformers/model_doc/bert.html#berttokenizer) for the **tokenizer class** and [BertConfig](https://huggingface.co/transformers/model_doc/bert.html#bertconfig) for the **configuration class**.
+For example, if you want to use the BERT architecture for text classification, you would use [`BertForSequenceClassification`](https://huggingface.co/transformers/model_doc/bert.html#bertforsequenceclassification) for the **model class**, [`BertTokenizer`](https://huggingface.co/transformers/model_doc/bert.html#berttokenizer) for the **tokenizer class** and [`BertConfig`](https://huggingface.co/transformers/model_doc/bert.html#bertconfig) for the **configuration class**.
 
-Later, you will see that those classes share a common class method from_pretrained(pretrained_model_name, ...). In our case, the parameter pretrained_model_name is a string with the shortcut name of a pre-trained model/tokenizer/configuration to load, e.g bert-base-uncased. We can find all the shortcut names in the transformers documentation [here](https://huggingface.co/transformers/pretrained_models.html#pretrained-models).
+Later, you will see that those classes share a common class method `from_pretrained(pretrained_model_name, ...)`. In our case, the parameter `pretrained_model_name` is a string with the shortcut name of a pre-trained model/tokenizer/configuration to load, e.g `bert-base-uncased`. We can find all the shortcut names in the `transformers` documentation [here](https://huggingface.co/transformers/pretrained_models.html#pretrained-models).
 
 In order to switch easily between classes — each related to a specific model type — I created a dictionary that allows loading the correct classes by just specifying the correct model type name.
 
- <iframe src="https://medium.com/media/f0393118fcf01d72f2559e52952d3c7a" frameborder=0></iframe>
+<script src="https://gist.github.com/maximilienroberti/32aa8af845404dcdf583aa2817fd4136.js"></script>
 
-It is worth noting that in this case, we use the transformers library only for a _multi-class text classification_ task. For that reason, this tutorial integrates only the transformer architectures that have a model for sequence classification implemented. These model types are :
+It is worth noting that in this case, we use the `transformers` library only for a _multi-class text classification_ task. For that reason, this tutorial integrates only the transformer architectures that have a model for sequence classification implemented. These model types are :
 
 * BERT (from Google)
 * XLNet (from Google/CMU)
@@ -104,35 +102,35 @@ However, if you want to go further — by implementing another type of model or 
 To match pre-training, we have to format the model input sequence in a specific format. 
 To do so, you have to first **tokenize** and then **numericalize** the texts correctly.
 The difficulty here is that each pre-trained model, that we will fine-tune, requires exactly the same specific pre-process — **tokenization** & **numericalization** — than the pre-process used during the pre-train part.
-Fortunately, the **tokenizer class** from \*\*\*\*transformers provides the correct pre-process tools that correspond to each pre-trained model.
+Fortunately, the **tokenizer class** from `transformers` provides the correct pre-process tools that correspond to each pre-trained model.
 
-In the fastai library, data pre-processing is done automatically during the creation of the DataBunch. 
-As you will see in the DataBunch implementation part, the **tokenizer** and the **numericalizer** are passed in the processor argument under the following format :
+In the `fastai` library, data pre-processing is done automatically during the creation of the `DataBunch`. 
+As you will see in the `DataBunch` implementation part, the **tokenizer** and the **numericalizer** are passed in the processor argument under the following format :
 
 ```
 processor = [TokenizeProcessor(tokenizer=tokenizer,…), NumericalizeProcessor(vocab=vocab,…)]
 ```
 
-Let’s first analyze how we can integrate the transformers tokenizer within the TokenizeProcessor function.
+Let’s first analyze how we can integrate the `transformers` tokenizer within the `TokenizeProcessor` function.
 
 **Custom tokenizer**
 
 This part can be a little confusing because a lot of classes are wrapped in each other and with similar names.
-To resume, if we look attentively at the fastai implementation, we notice that :
+To resume, if we look attentively at the `fastai` implementation, we notice that :
 
-1. The [TokenizeProcessor object](https://docs.fast.ai/text.data.html#TokenizeProcessor) takes as tokenizer argument a Tokenizer object.
-2. The [Tokenizer object](https://docs.fast.ai/text.transform.html#Tokenizer) takes as tok_func argument a BaseTokenizer object.
-3. The [BaseTokenizer object](https://docs.fast.ai/text.transform.html#BaseTokenizer) implement the function tokenizer(t:str) → List\[str] that takes a text t and returns the list of its tokens.
+1. The [`TokenizeProcessor` object](https://docs.fast.ai/text.data.html#TokenizeProcessor) takes as `tokenizer` argument a `Tokenizer` object.
+2. The [`Tokenizer` object](https://docs.fast.ai/text.transform.html#Tokenizer) takes as `tok_func` argument a `BaseTokenizer` object.
+3. The [`BaseTokenizer` object](https://docs.fast.ai/text.transform.html#BaseTokenizer) implement the function `tokenizer(t:str) → List[str]` that takes a text `t` and returns the list of its tokens.
 
-Therefore, we can simply create a new class TransformersBaseTokenizer that inherits from BaseTokenizer and overwrite a new tokenizer function.
+Therefore, we can simply create a new class `TransformersBaseTokenizer` that inherits from `BaseTokenizer` and overwrite a new `tokenizer` function.
 
- <iframe src="https://medium.com/media/a198d6c1682e1f00c42cb321223f7bfa" frameborder=0></iframe>
+<script src="https://gist.github.com/maximilienroberti/ff7e5934ef5bee01b5b615ce16001548.js"></script>
 
 In this implementation, be careful about 3 things:
 
 1. As we are not using RNN, we have to limit the _sequence length_ to the model input size.
 2. Most of the models require _special tokens_ placed at the beginning and end of the sequences.
-3. Some models like RoBERTa require a _space_ to start the input string. For those models, the encoding methods should be called with add_prefix_space set to True.
+3. Some models like RoBERTa require a _space_ to start the input string. For those models, the encoding methods should be called with `add_prefix_space` set to `True`.
 
 Below, you can find the resume of each pre-process requirement for the 5 model types used in this tutorial. You can also find this information on the [Hugging Face documentation](https://huggingface.co/transformers/) in each model section.
 
@@ -143,11 +141,11 @@ Below, you can find the resume of each pre-process requirement for the 5 model t
 >  XLNet: padding + \[CLS] + tokens + \[SEP]
 
 It is worth noting that we don’t add padding in this part of the implementation. 
-As we will see later, fastai manage it automatically during the creation of the DataBunch.
+As we will see later, `fastai` manage it automatically during the creation of the `DataBunch`.
 
 **Custom Numericalizer**
 
-In fastai, [NumericalizeProcessor object](https://docs.fast.ai/text.data.html#NumericalizeProcessor) takes as vocab argument a [Vocab object](https://docs.fast.ai/text.transform.html#Vocab).
+In `fastai`, [NumericalizeProcessor object](https://docs.fast.ai/text.data.html#NumericalizeProcessor) takes as vocab argument a [Vocab object](https://docs.fast.ai/text.transform.html#Vocab).
 From this analyze, I suggest two ways to adapt the fastai **numericalizer**:
 
 1. You can like described in [Dev Sharma’s article](https://medium.com/analytics-vidhya/using-roberta-with-fastai-for-nlp-7ed3fed21f6c) (Section 1. _Setting Up the Tokenizer_), retrieve the list of tokens and create a Vocab object.

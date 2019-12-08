@@ -145,17 +145,17 @@ As we will see later, `fastai` manage it automatically during the creation of th
 
 **Custom Numericalizer**
 
-In `fastai`, [NumericalizeProcessor object](https://docs.fast.ai/text.data.html#NumericalizeProcessor) takes as vocab argument a [Vocab object](https://docs.fast.ai/text.transform.html#Vocab).
-From this analyze, I suggest two ways to adapt the fastai **numericalizer**:
+In `fastai`, [`NumericalizeProcessor` object](https://docs.fast.ai/text.data.html#NumericalizeProcessor) takes as `vocab` argument a [`Vocab` object](https://docs.fast.ai/text.transform.html#Vocab).
+From this analyze, I suggest two ways to adapt the `fastai` **numericalizer**:
 
-1. You can like described in [Dev Sharma’s article](https://medium.com/analytics-vidhya/using-roberta-with-fastai-for-nlp-7ed3fed21f6c) (Section 1. _Setting Up the Tokenizer_), retrieve the list of tokens and create a Vocab object.
-2. Create a new class TransformersVocab that inherits from Vocab and overwrite numericalize and textify functions.
+1. You can like described in [Dev Sharma’s article](https://medium.com/analytics-vidhya/using-roberta-with-fastai-for-nlp-7ed3fed21f6c) (Section 1. _Setting Up the Tokenizer_), retrieve the list of tokens and create a `Vocab` object.
+2. Create a new class `TransformersVocab` that inherits from `Vocab` and overwrite `numericalize` and `textify` functions.
 
-Even if the first solution seems to be simpler, Transformers does not provide, for all models, a straightforward way to retrieve his list of tokens. 
+Even if the first solution seems to be simpler, t`ransformers` does not provide, for all models, a straightforward way to retrieve his list of tokens. 
 Therefore, I implemented the second solution, which runs for each model type. 
-It consists of using the functions convert_tokens_to_ids and convert_ids_to_tokens in respectively numericalize and textify.
+It consists of using the functions `convert_tokens_to_ids` and `convert_ids_to_tokens` in respectively `numericalize` and `textify`.
 
- <iframe src="https://medium.com/media/f622055d96c6fca0d965e2fcc2124c68" frameborder=0></iframe>
+<script src="https://gist.github.com/maximilienroberti/7204b786dbbfc71d897a38b59e9ac825.js"></script>
 
 **Custom processor**
 

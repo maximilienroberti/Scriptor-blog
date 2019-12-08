@@ -16,11 +16,8 @@ In early 2018, [Jeremy Howard](undefined) (co-founder of fast.ai) and [Sebastian
 
 <!--more-->
 
-
 {% include image_caption.html imageurl="https://cdn-images-1.medium.com/max/3038/0*HUhpxwRcyNFEXNNd" title="Apple Super" 
-caption="*ULMFiT requires less data than previous approaches.* ([Howard and Ruder, ACL 2018](https://arxiv.org/abs/1801.06146))" %}
-
-
+caption="ULMFiT requires less [data](https://maximilienroberti.github.io/fastai-with-transformers-bert-roberta-xlnet-xlm-distilbert) than previous approaches. ([Howard and Ruder, ACL 2018](https://arxiv.org/abs/1801.06146))" %}
 
 ![*ULMFiT requires less data than previous approaches.* ([Howard and Ruder, ACL 2018](https://arxiv.org/abs/1801.06146))](https://cdn-images-1.medium.com/max/3038/0*HUhpxwRcyNFEXNNd)
 

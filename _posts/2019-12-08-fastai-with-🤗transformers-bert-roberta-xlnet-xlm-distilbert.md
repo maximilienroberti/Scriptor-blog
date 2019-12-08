@@ -134,11 +134,11 @@ In this implementation, be careful about 3 things:
 
 Below, you can find the resume of each pre-process requirement for the 5 model types used in this tutorial. You can also find this information on the [Hugging Face documentation](https://huggingface.co/transformers/) in each model section.
 
->  BERT: \[CLS] + tokens + \[SEP] + padding
->  DistilBERT: \[CLS] + tokens + \[SEP] + padding
->  RoBERTa: \[CLS] + prefix_space + tokens + \[SEP] + padding
->  XLM: \[CLS] + tokens + \[SEP] + padding
->  XLNet: padding + \[CLS] + tokens + \[SEP]
+*  BERT: \[CLS] + tokens + \[SEP] + padding
+*  DistilBERT: \[CLS] + tokens + \[SEP] + padding
+*  RoBERTa: \[CLS] + prefix_space + tokens + \[SEP] + padding
+*  XLM: \[CLS] + tokens + \[SEP] + padding
+*  XLNet: padding + \[CLS] + tokens + \[SEP]
 
 It is worth noting that we don’t add padding in this part of the implementation. 
 As we will see later, `fastai` manage it automatically during the creation of the `DataBunch`.

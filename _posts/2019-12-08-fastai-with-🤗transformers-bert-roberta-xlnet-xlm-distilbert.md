@@ -16,20 +16,9 @@ In early 2018, [Jeremy Howard](undefined) (co-founder of fast.ai) and [Sebastian
 
 <!--more-->
 
-{% include image_caption.html imageurl="https://cdn-images-1.medium.com/max/3038/0*HUhpxwRcyNFEXNNd" title="Apple Super" 
+{% include image_caption.html imageurl="https://cdn-images-1.medium.com/max/3038/0*HUhpxwRcyNFEXNNd" title="ALMFiT" 
 caption="ULMFiT requires less data than previous approaches. (Howard and Ruder, ACL 2018)" %}
 
-```python
-from sklearn.ensemble import RandomForestClassifier 
-# Create the model with 100 trees
-model = RandomForestClassifier(n_estimators=100,                                                     
-                               bootstrap = True,                              
-                                max_features = 'sqrt')
-# Fit on training data
-model.fit(train, train_labels)
-```
-
-![](https://cdn-images-1.medium.com/max/3038/0*HUhpxwRcyNFEXNNd)*(ULMFiT requires less data than previous approaches.)*
 
 The first time I heard about ULMFiT was during a [fast.ai course](https://course.fast.ai/videos/?lesson=4) given by Jeremy Howard. He demonstrated how it is easy — thanks to the fastai library — to implement the complete ULMFiT method with only a few lines of codes. In his demo, he used an AWD-LSTM neural network pre-trained on Wikitext-103 and get rapidly state-of-the-art results. He also explained key techniques — also demonstrated in ULMFiT — to fine-tune models like **Discriminate Learning Rate**, **Gradual Unfreezing** or **Slanted Triangular Learning Rates**.
 

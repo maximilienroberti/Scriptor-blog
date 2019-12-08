@@ -10,7 +10,7 @@ tags:
   - Machine Learning
 layout: post
 ---
-\> A tutorial to implement state-of-the-art NLP models with Fastai for Sentiment Analysis
+> A tutorial to implement state-of-the-art NLP models with Fastai for Sentiment Analysis
 
 In early 2018, [Jeremy Howard](undefined) (co-founder of fast.ai) and [Sebastian Ruder](undefined) introduced the [Universal Language Model Fine-tuning for Text Classification](https://arxiv.org/pdf/1801.06146.pdf) (ULMFiT) method. ULMFiT was the first **Transfer Learning** method applied to NLP. As a result, besides significantly outperforming many state-of-the-art tasks, it allowed, with only 100 labeled examples, to match performances equivalent to models trained on 100× more data.
 
@@ -260,7 +260,7 @@ In the [Kaggle example](https://www.kaggle.com/maroberti/fastai-with-transformer
 
 ## 📋Conclusion
 
-In this article, I explain how to combine the transformers library with the beloved fastai library. It aims to make you understand where to look and modify both libraries to make them work together. Likely, it allows you to use **Slanted Triangular Learning Rates**, **Discriminate Learning Rate** and ***\*even** Gradual Unfreezing\*\*. As a result, without even tunning the parameters, you can obtain rapidly state-of-the-art results.
+In this article, I explain how to combine the transformers library with the beloved fastai library. It aims to make you understand where to look and modify both libraries to make them work together. Likely, it allows you to use **Slanted Triangular Learning Rates**, **Discriminate Learning Rate** and **\*\*even** Gradual Unfreezing\*\*. As a result, without even tunning the parameters, you can obtain rapidly state-of-the-art results.
 
 This year, the transformers became an essential tool for NLP. Because of that, I think that pre-trained transformers architectures will be integrated soon to future versions of fastai. Meanwhile, this tutorial is a good starter.
 

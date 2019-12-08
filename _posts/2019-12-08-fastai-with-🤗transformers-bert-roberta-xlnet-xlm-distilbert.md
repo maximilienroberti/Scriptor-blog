@@ -26,15 +26,6 @@ Since the introduction of ULMFiT, **Transfer Learning** became very popular in N
 
 Although these models are powerful, fastai do not integrate all of them. Fortunately, [Hugging Face](https://huggingface.co/) 🤗 created the well know [transformers library](https://github.com/huggingface/transformers). Formerly known as pytorch-transformers or pytorch-pretrained-bert, this library brings together over 40 state-of-the-art pre-trained NLP models (BERT, GPT-2, RoBERTa, CTRL…). The implementation gives interesting additional utilities like tokenizer, optimizer or scheduler.
 
-```
-jdklmqsjdfdjslkd
-```
-
-`Hello`
-
-[**huggingface/transformers**
-_State-of-the-art Natural Language Processing for TensorFlow 2.0 and PyTorch 🤗 Transformers (formerly known as…_github.com](https://github.com/huggingface/transformers)
-
 The transformers library can be self-sufficient but incorporating it within the fastai library provides simpler implementation compatible with powerful fastai tools like **Discriminate Learning Rate**, **Gradual Unfreezing** or **Slanted Triangular Learning Rates**. The point here is to allow anyone — expert or non-expert — to get easily state-of-the-art results and to “make NLP uncool again”.
 
 It is worth noting that integrating the Hugging Face transformers library in fastai has already been demonstrated in:

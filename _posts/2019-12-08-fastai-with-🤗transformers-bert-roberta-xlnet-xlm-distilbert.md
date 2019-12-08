@@ -257,6 +257,14 @@ As specified in _Keita Kurita_’s [article](https://mlexplained.com/2019/05/13/
 
 <script src="https://gist.github.com/maximilienroberti/c474f55774a107fd02ef7f531e3bbceb.js"></script>
 
+```python
+#header h1 { 
+test_preds = get_preds_as_nparray(DatasetType.Test)
+sample_submission = pd.read_csv(DATA_ROOT / 'sampleSubmission.csv')
+sample_submission['Sentiment'] = np.argmax(test_preds,axis=1)
+sample_submission.to_csv("predictions.csv", index=False)
+```
+
 In the [Kaggle example](https://www.kaggle.com/maroberti/fastai-with-transformers-bert-roberta), without playing too much with the parameters, we get a Public Score of 0.70059, which leads us to the 5th position on the leaderboard!
 
 ## 📋Conclusion

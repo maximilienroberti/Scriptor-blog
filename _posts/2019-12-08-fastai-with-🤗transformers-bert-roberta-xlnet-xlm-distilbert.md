@@ -11,8 +11,8 @@ tags:
 layout: post
 ---
 > A tutorial to implement state-of-the-art NLP models with Fastai for Sentiment Analysis.
->
-> NB. This article was originally published on [Medium](https://towardsdatascience.com/fastai-with-transformers-bert-roberta-xlnet-xlm-distilbert-4f41ee18ecb2) with Towards Data Science.
+
+_NB. This article was originally published on_ [_Medium_](https://towardsdatascience.com/fastai-with-transformers-bert-roberta-xlnet-xlm-distilbert-4f41ee18ecb2) _with Towards Data Science._
 
 In early 2018, [Jeremy Howard](undefined) (co-founder of fast.ai) and [Sebastian Ruder](undefined) introduced the [Universal Language Model Fine-tuning for Text Classification](https://arxiv.org/pdf/1801.06146.pdf) (ULMFiT) method. ULMFiT was the first **Transfer Learning** method applied to NLP. As a result, besides significantly outperforming many state-of-the-art tasks, it allowed, with only 100 labeled examples, to match performances equivalent to models trained on 100× more data.
 

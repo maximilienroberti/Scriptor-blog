@@ -3,8 +3,7 @@ lang: en-US
 title: Maximilien Roberti
 description: >-
   Machine Learning Engineer passionate about cutting-edge technology and solving
-  real-world problems. Follow me on Twitter to stay tuned. [_Towards Data
-  Science_](https://towardsdatascience.com/)
+  real-world problems.
 baseurl: ''
 url: 'https://maximilienroberti.github.io'
 permalink: '/:title'

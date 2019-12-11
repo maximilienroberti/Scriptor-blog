@@ -10,6 +10,6 @@ I first graduated with a Bachelor’s degree in Mechanical Engineering from the 
 
 After my studies, I explored a variety of engineering domains. From Research Software Engineer in Mexico to Construction Engineer in the Democratic Republic of the Congo, I get unique experiences in research, communication and management.
 
-I am a fast learner, not afraid to dive deep into specific engineering challenges. I am focusing now on exploring AI through formations, personal projects, Kaggle competitions and articles writing. Always ready for the next big challenge, I am looking for a Machine Learning job opportunity.
+I am a fast learner, not afraid to dive deep into specific engineering challenges. I am focusing now on exploring AI through formations, personal projects, Kaggle competitions, papers reading and articles writing. Always ready for the next big challenge, I am looking for a Machine Learning job opportunity.
 
 Feel free to contact me. I will respond as soon as possible.

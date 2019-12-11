@@ -4,7 +4,7 @@ description: About Maximilien Roberti
 feature_image: /images/profile_picture_5_3.jpg
 layout: page
 ---
-I have a strong interest in AI advancements focusing especially on Natural Language Processing & Computer Vision. Recently, I started writing [articles](https://medium.com/@maximilienroberti) on Medium and participating to Kaggle competitions.
+I have a strong interest in AI advancements focusing especially on Natural Language Processing & Computer Vision. Recently, I started writing [articles](https://medium.com/@maximilienroberti) on Medium and participating in Kaggle competitions.
 
 I first graduated with a Bachelor’s degree in Mechanical Engineering from the Louvain School of Engineering. After, from the same school, I got a Master’s degree in Computer Engineering with a specialization in Artificial Intelligence. I also took part in a school exchange at Prague where I studied more about 3D modeling and robotics. 
 
